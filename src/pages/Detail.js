@@ -6,6 +6,7 @@ import { productsActionDetail } from '../redux/actions/products'
 import { useSelector } from 'react-redux'
 import { FaStar } from 'react-icons/fa'
 import { CgMathPlus, CgMathMinus } from 'react-icons/cg'
+import { productsCard } from '../redux/actions/card'
 
 const Detail = () => {
   const { id } = useParams()
@@ -29,6 +30,11 @@ const Detail = () => {
     }
   }
 
+  const addToCard = () => {
+    dispatch(productsCard(id, count))
+    dispatch({ type: 'TOGGLE_DRAWER', payload: true })
+  }
+
   console.log(product)
   return (
     <div>
@@ -47,7 +53,9 @@ const Detail = () => {
             </div>
             <div className='pt-3'>
               <p className='text-2xl font-semibold'>Description:</p>
-              <p className='text-1xl font-semibold'>{product?.description}</p>
+              <p className='text-1xl font-semibold'>
+                {product?.description?.slice(0, 120)}...
+              </p>
               <p className='text-1xl font-semibold'>
                 {' '}
                 Stock {product?.rating?.count}
@@ -75,7 +83,7 @@ const Detail = () => {
                   className='cursor-pointer h-7 w-7 text-black border-blue-500 border rounded-xl'
                 />
               </div>
-              <div className='pt-3'>
+              <div onClick={addToCard} className='pt-3'>
                 <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded w-full p-3 '>
                   Add to Cart
                 </button>

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BsLightbulb, BsBasketFill, BsMoon } from 'react-icons/bs'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Navbar = () => {
   const [theme, setTheme] = useState('false')
   const dispatch = useDispatch()
+  const { cardItems } = useSelector(state => state.card)
+
   // add a dark mode and white mode with root
 
   useEffect(() => {
