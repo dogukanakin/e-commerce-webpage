@@ -11,10 +11,10 @@ In the project directory, you can run:
 Here it's a demo of the app:
 
 <img
-src="https://github.com/dogukanakin/e-commerce/blob/main/assets/1.png" width="300" height="600" />
+src="https://github.com/dogukanakin/e-commerce/blob/main/assets/1.png" width="600" height="600" />
 
 <img
-src="https://github.com/dogukanakin/e-commerce/blob/main/assets/2.png" width="300" height="600" />
+src="https://github.com/dogukanakin/e-commerce/blob/main/assets/2.png" width="600" height="600" />
 
 In this project I used:
 
